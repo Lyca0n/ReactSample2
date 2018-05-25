@@ -7,7 +7,7 @@ module.exports ={
         /**
          * Set main file to bundle 
          */
-    entry :"./src/playground/destructuring.js",
+    entry :"./src/playground/redux-expensify.js",
     
     output: {
         /**
