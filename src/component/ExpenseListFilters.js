@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import 'react-dates/initialize';
-import { SingleDatePicker } from 'react-dates';
+import { DateRangePicker } from 'react-dates';
 import 'react-dates/lib/css/_datepicker.css';
 import { setTextFilter, sortByDate, sortByAmount,setStartDate, setEndDate } from '../actions/filters';
 
@@ -9,16 +9,17 @@ class ExpenseListFilters extends React.Component {
     state = {
         focused: null
     };
+    onDatesChange=({startDate, endDate})=>{
+        this.props.dispatch(setStartDate(startDate));
+        this.props.dispatch(setEndDate(endDate));
+    };
+    onFocusChange=(focused)=>{
+        this.setState(()=>({
+            focused
+        }));
+    };    
     render() {
-        onDatesChange=({startDate, endDate})=>{
-            this.props.dispatch(setStartDate(startDate));
-            this.props.dispatch(setEndDate(endDate));
-        };
-        onFocusChange=(focused)=>{
-            this.setState(()=>({
-                focused
-            }));
-        };
+
         return (<div>
             <input
                 type="text"
@@ -39,12 +40,15 @@ class ExpenseListFilters extends React.Component {
                 <option value="date">Date</option>
                 <option value="amount">Amount</option>
             </select>
-            <SingleDatePicker
+            <DateRangePicker
                 startDate={this.props.filters.startDate}
+                startDateId='startDate'
                 endDate={this.props.filters.endDate}
-                onDateChange={this.onDatesChange}
-                focused={this.state.focused}
+                endDateId='endDate'
+                onDatesChange={this.onDatesChange}
+                focusedInput={this.state.focused}
                 onFocusChange={this.onFocusChange}
+                showClearDates={true}
                 numberOfMonths={1}
                 isOutsideRange={(day)=>{false}}
             />
