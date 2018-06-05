@@ -33,14 +33,12 @@ test('should generate set text filter action object from input',()=>{
 test('should generate sort by date action object',()=>{
     const action = sortByDate();
     expect(action).toEqual({
-        type:'SORT_BY_DATE',
-        sortBy: 'date'
+        type:'SORT_BY_DATE'
     });
 });
 test('should generate  sort by amount action object',()=>{
     const action = sortByAmount();
     expect(action).toEqual({
-        type:'SORT_BY_AMOUNT',
-        sortBy: 'amount'
+        type:'SORT_BY_AMOUNT'
     });
 });
