@@ -5,8 +5,5 @@
     ],
     "snapshotSerializers": [
         "enzyme-to-json/serializer"
-    ],
-    "moduleNameMapper":{
-        "^[./a-zA-Z0-9$_-]+\\.css$":"<rootDir>/src/tests/mock/styleMock.js"
-    }
+    ]
 }
