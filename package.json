@@ -6,7 +6,8 @@
   "scripts": {
     "test": "jest --config=jest.config.json",
     "serve": "live-server public/",
-    "build": "webpack",
+    "build:dev": "webpack",
+    "build:prod": "webpack -p --env production",
     "dev-server": "webpack-dev-server"
   },
   "author": "",
@@ -22,10 +23,12 @@
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
     "enzyme-to-json": "^3.3.4",
+    "extract-text-webpack-plugin": "^4.0.0-alpha.0",
     "live-server": "^1.2.0",
     "moment": "^2.22.1",
     "node-sass": "^4.9.0",
     "normalize.css": "^8.0.0",
+    "npm-check-updates": "^2.14.2",
     "react": "^16.3.2",
     "react-addons-shallow-compare": "^15.6.2",
     "react-dates": "^12.7.0",
