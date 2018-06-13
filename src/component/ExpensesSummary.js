@@ -17,8 +17,8 @@ export const ExpensesSummary = ({expenseCount, expenseTotal})=>{
 const mapStateToProps=(state)=>{
     const vis =selectExpenses(state.expenses, state.filters);
     return{
-        count: vis.length,
-        total: selectExpensesTotal(vis)
+        expenseCount: vis.length,
+        expenseTotal: selectExpensesTotal(vis)
     };
 };
 export default connect(mapStateToProps)(ExpensesSummary);
