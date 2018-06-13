@@ -19,7 +19,7 @@ module.exports = (env) => {
             /**
              * Set out output file and name for the bundled javascript file
              */
-            path: path.join(__dirname, 'public'),
+            path: path.join(__dirname, 'public','dist'),
             filename: 'bundle.js'
         },
         mode: "development",
