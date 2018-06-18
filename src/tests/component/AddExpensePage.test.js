@@ -4,11 +4,11 @@ import { AddExpensePage } from '../../component/AddExpensePage';
 import expenses from '../fixtures/expenses';
 
 
-let addExpense,history,wrapper;
+let startAddExpense,history,wrapper;
 beforeEach(()=>{
     history = {push: jest.fn()};
-    addExpense = jest.fn();
-    wrapper  = shallow(<AddExpensePage addExpense={addExpense} history={history}/>);
+    startAddExpense = jest.fn();
+    wrapper  = shallow(<AddExpensePage startAddExpense={startAddExpense} history={history}/>);
 });
 
 test('should render expense AddExpensePage correctly',()=>{
@@ -18,5 +18,5 @@ test('should render expense AddExpensePage correctly',()=>{
 test('should handle onSubmit',()=>{
     wrapper.find('ExpenseForm').prop('onSubmit')(expenses[0]);
     expect(history.push).toHaveBeenCalledWith('/');
-    expect(addExpense).toBeCalledWith(expenses[0]);
+    expect(startAddExpense).toBeCalledWith(expenses[0]);
 });

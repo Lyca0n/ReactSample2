@@ -10,8 +10,4 @@ const config  = {
   };
   firebase.initializeApp(config);
 
-  const databae = firebase.database();
-  database.ref()
-  .on('value', (snapshot)=>{
-    console.log(snapshot.val);
-  });
+  const database = firebase.database();
