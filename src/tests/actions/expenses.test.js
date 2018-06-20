@@ -53,6 +53,35 @@ test('should add expense to database and store',(done)=>{
                 ...expenseData
             }
         });
-        done();
-    });
+        
+       return database.ref(`expenses/${actions[0].expense.id}`).once('value');
+    }).then((snapshot)=>{
+            expect(snapshot.val()).toEqual(expenseData);
+             done();  
+        });
+});
+
+test('should add expense with defaults to database store',(done)=>{
+    const store = createMockStore({});
+    const expenseData={
+            description:'',
+            note:'',
+            amount:0,
+            createdAt:0
+    };
+    store.dispatch(startAddExpense(expenseData)).then(()=>{
+        const actions = store.getActions();
+        expect(actions[0]).toEqual({
+            type:'ADD_EXPENSE',
+            expense:{
+                id:expect.any(String),
+                ...expenseData
+            }
+        });
+        
+       return database.ref(`expenses/${actions[0].expense.id}`).once('value');
+    }).then((snapshot)=>{
+            expect(snapshot.val()).toEqual(expenseData);
+             done();  
+        });    
 });
