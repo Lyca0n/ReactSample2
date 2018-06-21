@@ -35,3 +35,14 @@ export const startAddExpense =(expenseData ={})=>{
         });
     };
 };
+
+export const setExpenses=(expenses)=>({
+    type:'SET_EXPENSES',
+    expenses
+});
+
+export const startSetExpenses =(dispatch)=>{
+    return database.ref('expenses').once().then(()=>{
+        dispatch(setExpenses());
+    });
+};
