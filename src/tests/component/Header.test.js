@@ -1,6 +1,6 @@
 import React from 'react';
 import {shallow } from 'enzyme';
-import Header from '../../component/Header';
+import {Header} from '../../component/Header';
 
 
 test('should render Header correctly',()=>{

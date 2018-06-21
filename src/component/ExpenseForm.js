@@ -54,6 +54,7 @@ export default class ExpenseForm extends React.Component {
         }
     };
     render() {
+
         if (this.state.hasError) {
             // You can render any custom fallback UI
             return <h1>Something went wrong.</h1>;
@@ -84,9 +85,9 @@ export default class ExpenseForm extends React.Component {
                             isOutsideRange={(day)=>{false}}
                         />
                         <textarea
-                            value={this.note}
+                            value={this.state.note}
                             onChange={this.onNoteChange}
-                            placeholder="add optional note"
+                            placeholder="Add a note for your expense(optional)"
                         >
                         </textarea>
                         <button>Add Expense</button>
