@@ -2,8 +2,11 @@
 
 exports[`should render LoginPage correctly 1`] = `
 <div>
-  <Connect(ExpenseListFilters) />
-  <Connect(ExpensesSummary) />
-  <Connect(ExpenseList) />
+  <h2>
+    Login
+  </h2>
+  <button>
+    Login With Google
+  </button>
 </div>
 `;
