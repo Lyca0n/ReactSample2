@@ -4,6 +4,7 @@ html{
 body{
     font-family: Helvetica,Arial,sans-serif;
     font-size: size;
+    color:$dark-grey;
 }
 button{
     cursor:pointer;
@@ -14,3 +15,4 @@ button:disabled{
 .is-active{
     font-weight:bold;
 }
+
