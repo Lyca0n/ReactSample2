@@ -48,7 +48,7 @@ export class ExpenseListFilters extends React.Component {
                         >
                             <option value="date">Date</option>
                             <option value="amount">Amount</option>
-                        </select>
+                        </select> 
                     </div>
                     <div className="input-group__item">
                         <DateRangePicker
@@ -84,10 +84,10 @@ const mapDispatchToProps = (dispatch) => {
             dispatch(setEndDate(endDate))
         },
         sortByAmount: () => {
-            dispatch(sortByAmount)
+            dispatch(sortByAmount())
         },
         sortByDate: () => {
-            dispatch(sortByDate)
+            dispatch(sortByDate())
         },
         setTextFilter: (text) => {
             dispatch(setTextFilter(text));

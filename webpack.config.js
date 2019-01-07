@@ -22,7 +22,7 @@ module.exports = (env) => {
         /**
          * Set main file to bundle 
          */
-        entry: "./src/app.js",
+        entry: ['babel-polyfill', "./src/app.js"],
 
         output: {
             /**
